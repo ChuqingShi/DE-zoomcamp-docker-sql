@@ -24,7 +24,7 @@ ENV PATH="/code/.venv/bin:$PATH"
 # Copy only dependency metadata first for layer caching
 COPY pyproject.toml uv.lock .python-version ./
 
-# Install dependencies from lock file (ensures reproducible builds)
+# Install main dependencies from lock file (ensures reproducible builds)
 RUN uv sync --locked
 
 # Copy application code
